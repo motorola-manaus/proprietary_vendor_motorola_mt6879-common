@@ -1,8 +1,12 @@
 on early-fs
     exec_start vendor-mmi-cxp-sh
 
+on property:vendor.gsm.ril.uicc.mccmnc=*
+    start vendor-mmi-cxp-sh
+
 service vendor-mmi-cxp-sh /vendor/bin/vendor.mmi.cxp.sh
     user root
+    group root system
     oneshot
     disabled
 
