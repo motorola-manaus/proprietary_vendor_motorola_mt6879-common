@@ -10,6 +10,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/mt6879-common/proprietary/system/etc/permissions/moto-telephony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/moto-telephony.xml \
     vendor/motorola/mt6879-common/proprietary/system/etc/public.libraries-mtk.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-mtk.txt \
     vendor/motorola/mt6879-common/proprietary/system_ext/etc/init/init.vtservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.vtservice.rc \
+    vendor/motorola/mt6879-common/proprietary/system_ext/etc/sysconfig/com.mediatek.ims.config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/com.mediatek.ims.config.xml \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/AbnormalDisplayLog_dynamic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/AbnormalDisplayLog_dynamic.xml \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/MNL_Config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/MNL_Config.xml \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/VideoLog_dynamic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/VideoLog_dynamic.xml \
@@ -75,7 +76,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/init/init.conninfra.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.conninfra.rc \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/init/init.gps_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.gps_drv.rc \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/init/init.gps_pwr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.gps_pwr.rc \
-    vendor/motorola/mt6879-common/proprietary/vendor/etc/init/init.vtservice_aidl.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vtservice_aidl.rc \
+    vendor/motorola/mt6879-common/proprietary/vendor/etc/init/init.vtservice_hidl.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vtservice_hidl.rc \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/init/init.wlan_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlan_drv.rc \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/init/lbs_hidl_service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/lbs_hidl_service.rc \
     vendor/motorola/mt6879-common/proprietary/vendor/etc/init/mtk_agpsd_p.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/mtk_agpsd_p.rc \
@@ -149,7 +150,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.keymaster_attestation@1.1-impl \
     vendor.mediatek.hardware.mms@1.6-impl \
     vendor.mediatek.hardware.nvram@1.1-impl \
-    vendor.mediatek.hardware.videotelephony-impl \
+    vendor.mediatek.hardware.videotelephony@1.0-impl \
     lbs_hidl_service-impl \
     libAVCSecureVencCA \
     libDefaultFpsActor \
@@ -393,7 +394,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.pq@2.8 \
     vendor.mediatek.hardware.pq@2.9 \
     vendor.mediatek.hardware.radio_op@3.0 \
-    vendor.mediatek.hardware.videotelephony-V1-ndk_vendor \
+    vendor.mediatek.hardware.videotelephony@1.0_vendor \
     vendor.trustonic.tee.tui@1.0 \
     vendor.trustonic.tee@1.0 \
     vendor.trustonic.tee@1.1 \
@@ -471,7 +472,8 @@ PRODUCT_PACKAGES += \
     MtkTelephonyAssist \
     moto-telephony \
     mediatek-ims-base \
-    mediatek-ims-oem-plugin \
+    mediatek-telephony-base \
+    mediatek-ims-extension-plugin \
     android.hardware.neuralnetworks-shim-service-mtk.xml \
     android.hardware.security.keymint-service.trustonic.xml \
     android.hardware.security.secureclock-service.trustonic.xml \
@@ -506,7 +508,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.nwk_opt@1.0-service \
     vendor.mediatek.hardware.pq@2.2-service \
     vendor.trustonic.tee@1.1-service \
-    vtservice_aidl \
+    vtservice_hidl \
     init.insmod \
     init.mmi.backup.trustlet \
     init.mmi.block_perm \
@@ -554,3 +556,7 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libpq_prot_so \
     vendor_lib64_libpqparamparser_so \
     vendor_lib64_libpqpconfig_so
+
+PRODUCT_BOOT_JARS += \
+    mediatek-ims-base \
+    mediatek-telephony-base
