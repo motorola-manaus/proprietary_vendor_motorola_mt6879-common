@@ -1,6 +1,6 @@
 # Motorola MT6879 Common Vendor Tree
 
-This repository provides proprietary blobs and prebuilts shared across Motorola devices powered by the **MediaTek Dimensity 7020 (MT6879)** SoC.
+This repository provides proprietary blobs and prebuilts shared across Motorola devices powered by the **MediaTek Dimensity 7030 (MT6879)** SoC.
 
 ## Contents
 
